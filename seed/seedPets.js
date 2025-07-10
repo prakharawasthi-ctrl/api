@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Pet = require('../models/Pet');
 const petData = require('./seedData');
-mongoose.connect('mongodb+srv://prakharawasthi200230:De5KOVq6TKndEhH0@api.5w8roio.mongodb.net/',{
+require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI,{
     userNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(async()=>{
